@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather ForeCast</title>
+        <link rel="stylesheet" href="../src/Style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <section class="select-city" id="go-top">
+            <div class="basic-details">
+                <div class="city">
+                    <div id="city-icon"></div>
+                    <input name="cities" list="cities" spellcheck="false" id="city-dropdown" value="NewYork">
+                    <datalist id="cities" class="datalist-cities">
+                    </datalist>
+                </div>
+                <div class="date-time">
+                    <div id="time-des">
+                        <div id="time">10:10</div>
+                        <div id="seconds">: 44</div>
+                        <div id="time-icon">
+                            <img src="../Assets/HTML & CSS/General Images & Icons/amState.svg" alt="AM" id="time-icon-var">
+                        </div>
+                    </div>
+                    <div id="date">
+                        01-Mar-2020
+                    </div>
+                </div>
+            </div>
+
+            <div class="temp-details">
+                <div class="temp-details-top">
+                    <div class="temp-details-top-left-block">
+                        <div id="temp-c" class="temp-details-text">Temp &deg;C</div>
+                        <div class="temp-details-values" id="temp-c-val">
+                            <br>&nbsp;- - &deg;C
+                        </div>
+                    </div>
+                    <div class="temp-details-top-right-block">
+                        <div id="humidity" class="temp-details-text">Humidity</div>
+                        <div class="temp-details-values" id="humidity-val">
+                            <br>&nbsp;- -
+                        </div>
+                    </div>
+
+                </div>
+                <div class="temp-details-bottom">
+                    <div class="temp-details-bottom-left-block">
+                        <div id="temp-f" class="temp-details-text">Temp F</div>
+                        <div id="temp-f-val" class="temp-details-values">
+                            <br>&nbsp;- -  F
+                        </div>
+                    </div>
+                    <div class="temp-details-bottom-right-block">
+                        <div id="precipitation" class="temp-details-text">Precipitation</div>
+                        <div id="precipitation-val" class="temp-details-values">
+                            <br>&nbsp;- -
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-details">
+                <div id="timeline-details-block-1" class="set-timeline-details">
+                    <div id="timing-1" class="self-align">NOW</div>
+                    <div class="self-align">|</div>
+                    <div id="weather-status-icon-1" class="self-align">
+                        <img src="../Assets/HTML & CSS/Weather Icons/cloudyIcon.svg" alt="cloudy" class="weather-icon-resize">
+                    </div>
+                    <div id="timeline-temp-1" class="self-align">6</div>
+                </div>
+
+                <div class="set-timeline-details">
+                    <br>
+                    <div class="self-align">|</div>
+                </div>
+
+                <div id="timeline-details-block-2" class="set-timeline-details">
+                    <div id="timing-2" class="self-align">11 AM</div>
+                    <div class="self-align">|</div>
+                    <div id="weather-status-icon-2" class="self-align">
+                        <img src="../Assets/HTML & CSS/Weather Icons/cloudyIcon.svg" alt="cloudy" class="weather-icon-resize">
+                    </div>
+                    <div id="timeline-temp-2" class="self-align">7</div>
+                </div>
+
+                <div class="set-timeline-details">
+                    <br>
+                    <div class="self-align">|</div>
+                </div>
+
+                <div id="timeline-details-block-3" class="set-timeline-details">
+                    <div id="timing-3" class="self-align">12 PM</div>
+                    <div class="self-align">|</div>
+                    <div id="weather-status-icon-3" class="self-align">
+                        <img src="../Assets/HTML & CSS/Weather Icons/windyIcon.svg" alt="windy" class="weather-icon-resize">
+                    </div>
+                    <div id="timeline-temp-3" class="self-align">7</div>
+                </div>
+
+                <div class="set-timeline-details">
+                    <br>
+                    <div class="self-align">|</div>
+                </div>
+
+                <div id="timeline-details-block-4" class="set-timeline-details">
+                    <div id="timing-4" class="self-align">1 PM</div>
+                    <div class="self-align">|</div>
+                    <div id="weather-status-icon-4" class="self-align">
+                        <img src="../Assets/HTML & CSS/Weather Icons/cloudyIcon.svg" alt="cloudy" class="weather-icon-resize">
+                    </div>
+                    <div id="timeline-temp-4" class="self-align">8</div>
+                </div>
+
+                <div class="set-timeline-details">
+                    <br>
+                    <div class="self-align">|</div>
+                </div>
+
+                <div id="timeline-details-block-5" class="set-timeline-details">
+                    <div id="timing-5" class="self-align">2 PM</div>
+                    <div class="self-align">|</div>
+                    <div id="weather-status-icon-5" class="self-align">
+                        <img src="../Assets/HTML & CSS/Weather Icons/windyIcon.svg" alt="windy" class="weather-icon-resize">
+                    </div>
+                    <div id="timeline-temp-5" class="self-align">8</div>
+                </div>
+
+                <div class="set-timeline-details">
+                    <br>
+                    <div class="self-align">|</div>
+                </div>
+
+                <div id="timeline-details-block-6" class="set-timeline-details">
+                    <div id="timing-6" class="self-align">3 PM</div>
+                    <div class="self-align">|</div>
+                    <div id="weather-status-icon-6" class="self-align">
+                        <img src="../Assets/HTML & CSS/Weather Icons/cloudyIcon.svg" alt="cloudy" class="weather-icon-resize">
+                    </div>
+                    <div id="timeline-temp-6" class="self-align">6</div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="various-cities-block">
+            <div class="various-cities-top-cities">
+                <div class="various-cities-header">
+                    <div id="heading">Top cities around the world</div>
+                    <div class="corner-window">
+                        <button class="weather-select-button" id="sunny">
+                            <img src="../Assets/HTML & CSS/Weather Icons/sunnyIcon.svg" alt="sunny" id="sunny-resize">
+                        </button>
+                        <button class="weather-select-button" id="snowy">
+                            <img src="../Assets/HTML & CSS/Weather Icons/snowflakeIcon.svg" alt="snowy" id="snowy-resize">
+                        </button>
+                        <button class="weather-select-button" id="rainy">
+                            <img src="../Assets/HTML & CSS/Weather Icons/rainyIcon.svg" alt="rainy" id="rainy-resize">
+                        </button>
+
+                        <div class="display-top-cities">
+                            <div class="display-top-cities-text">Display Top</div>
+                            <input type="number" id="top-cities-select" min="3" max="10">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-cities-container">
+                    <div class="display-left-arrow">
+                        <img src="../Assets/HTML & CSS/General Images & Icons/arrowleft.png" alt="arrow-left" class="show-arrow" id="show-cities-left-arrow">
+                    </div>
+                    <div class="show-cities">
+                    </div>
+                    <div class="display-right-arrow">
+                        <img src="../Assets/HTML & CSS/General Images & Icons/arrowright.png" alt="arrow-right" class="show-arrow" id="show-cities-right-arrow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cities-across-continents">
+            <div class="continents-header">
+                <div class="continents-header-text">Cities across continents at a glance</div>
+                <div class="sorting-options">
+                    <div class="continent-name-sort">
+                        <div class="continent-name-sort-text">Continent Name</div>
+                        <div class="continent-name-sort-img-container">
+                            <img src="../Assets/HTML & CSS/General Images & Icons/arrowDown.svg" alt="down-arrow" class="arrow-configure">
+                        </div>
+                    </div>
+                    <div class="temp-sort">
+                        <div class="temp-sort-text">Temparature</div>
+                        <div class="temp-sort-img-container">
+                            <img src="../Assets/HTML & CSS/General Images & Icons/arrowUp.svg" alt="up-arrow" class="arrow-configure">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cities-across-continents-grid-container">
+            </div>
+
+        </section>
+
+    </body>
+    <script src="script.js"></script>
+</html>
