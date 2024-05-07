@@ -176,7 +176,7 @@ function updateTopSection (selectedCity) {
   clearInterval(setTimerId) // Clearing out any previous event running the timer for any previously selected city
   const cityData = jsonData[selectedCity]
 
-  document.getElementById('city-icon').innerHTML = `<img src="../Assets/HTML & CSS/Icons for cities/${selectedCity}.svg" alt="${selectedCity}" id="icon-resize">`
+  document.getElementById('city-icon').innerHTML = `<img src="Assets/HTML & CSS/Icons for cities/${selectedCity}.svg" alt="${selectedCity}" id="icon-resize">`
   document.getElementById('temp-c-val').innerHTML = `<br>&nbsp;${cityData.temperature}`
   document.getElementById('humidity-val').innerHTML = `<br>${cityData.humidity}`
   document.getElementById('temp-f-val').innerHTML = `<br>&nbsp;${celsiusToFahrenheit(cityData.temperature)} F`
@@ -187,10 +187,10 @@ function updateTopSection (selectedCity) {
   document.getElementById('seconds').textContent = ': ' + String(currTime.getSeconds()).padStart(2, '0')
   if (dateTimeArray[2] === 'AM') {
     document.getElementById('time-des').style.color = '#fdf14a'
-    document.getElementById('time-icon').innerHTML = `<img src="../Assets/HTML & CSS/General Images & Icons/amState.svg" alt="${'AM'}" id="time-icon-var"></img>`
+    document.getElementById('time-icon').innerHTML = `<img src="Assets/HTML & CSS/General Images & Icons/amState.svg" alt="${'AM'}" id="time-icon-var"></img>`
   } else {
     document.getElementById('time-des').style.color = 'rgb(225, 167, 230)'
-    document.getElementById('time-icon').innerHTML = `<img src="../Assets/HTML & CSS/General Images & Icons/pmState.svg" alt="${'PM'}" id="time-icon-var"></img>`
+    document.getElementById('time-icon').innerHTML = `<img src="Assets/HTML & CSS/General Images & Icons/pmState.svg" alt="${'PM'}" id="time-icon-var"></img>`
   }
   document.getElementById('date').textContent = dateTimeArray[3]
   updateTimeLineDetails(cityData, parseInt(dateTimeArray[4]), dateTimeArray[2]) // dateTimeArray[4] --> Current Time
@@ -231,7 +231,7 @@ function updateMiddleSection (selectedWeatherButton, spinnerLimit) {
           <div class="city-name">${cityData.cityName}</div>
           <div class="city-temp">
               <div>
-                  <img src="../Assets/HTML & CSS/Weather Icons/${weatherStatus}Icon.svg" alt="${weatherStatus}" class="weather-icon">
+                  <img src="Assets/HTML & CSS/Weather Icons/${weatherStatus}Icon.svg" alt="${weatherStatus}" class="weather-icon">
               </div>
               <div class="city-temp-value">${cityData.temperature}</div>
           </div>
@@ -240,17 +240,17 @@ function updateMiddleSection (selectedWeatherButton, spinnerLimit) {
       <div class="city-date">${dateTimeArray[3]}</div>
       <div class="city-humidity">
           <div>
-              <img src="../Assets/HTML & CSS/Weather Icons/humidityIcon.svg" alt="humidity" class="city-humidity-icon">
+              <img src="Assets/HTML & CSS/Weather Icons/humidityIcon.svg" alt="humidity" class="city-humidity-icon">
           </div>
           <div class="city-humidity-value">${cityData.humidity}</div>
       </div>
       <div class="city-precipitation">
           <div>
-              <img src="../Assets/HTML & CSS/Weather Icons/precipitationIcon.svg" alt="precipitation" class="city-precipitation-icon">
+              <img src="Assets/HTML & CSS/Weather Icons/precipitationIcon.svg" alt="precipitation" class="city-precipitation-icon">
           </div>
           <div class="city-precipitation-value">${cityData.precipitation}</div>
       </div>
-      <img src="../Assets/HTML & CSS/Icons for cities/${cityData.cityName.toLowerCase()}.svg" alt="${cityData.cityName}" 
+      <img src="Assets/HTML & CSS/Icons for cities/${cityData.cityName.toLowerCase()}.svg" alt="${cityData.cityName}" 
       class="display-city-image"></img>
       </div>`
     i++
@@ -281,7 +281,7 @@ function updateBottomSection (bottomSectionCities) {
       <div class="continent-blocks-temp">${cityData.temperature}</div>
       <div class="continent-blocks-humidity">
           <div class="continent-blocks-humidity-icon">
-              <img src="../Assets/HTML & CSS/Weather Icons/humidityIcon.svg" alt="humidity" class="continent-blocks-humidity-icon-resize">
+              <img src="Assets/HTML & CSS/Weather Icons/humidityIcon.svg" alt="humidity" class="continent-blocks-humidity-icon-resize">
           </div>
           <div class="continent-blocks-humidity-value">${cityData.humidity}</div>
       </div>
@@ -306,10 +306,10 @@ function sortCardsByContinentName () {
 
   // Changing the direction of the arrow for user visibility
   if (arrow === 'down-arrow') {
-    continentSortContainer.innerHTML = '<img src="../Assets/HTML & CSS/General Images & Icons/arrowUp.svg" alt="up-arrow" class="arrow-configure">'
+    continentSortContainer.innerHTML = '<img src="Assets/HTML & CSS/General Images & Icons/arrowUp.svg" alt="up-arrow" class="arrow-configure">'
     sortByContinent('descending')
   } else {
-    continentSortContainer.innerHTML = '<img src="../Assets/HTML & CSS/General Images & Icons/arrowDown.svg" alt="down-arrow" class="arrow-configure">'
+    continentSortContainer.innerHTML = '<img src="Assets/HTML & CSS/General Images & Icons/arrowDown.svg" alt="down-arrow" class="arrow-configure">'
     sortByContinent('ascending')
   }
 }
@@ -324,10 +324,10 @@ function sortCardsByTemperature () {
 
   // Changing the direction of the arrow for user visibility
   if (arrow === 'down-arrow') {
-    tempSortContainer.innerHTML = '<img src="../Assets/HTML & CSS/General Images & Icons/arrowUp.svg" alt="up-arrow" class="arrow-configure">'
+    tempSortContainer.innerHTML = '<img src="Assets/HTML & CSS/General Images & Icons/arrowUp.svg" alt="up-arrow" class="arrow-configure">'
     sortByTemp('descending')
   } else {
-    tempSortContainer.innerHTML = '<img src="../Assets/HTML & CSS/General Images & Icons/arrowDown.svg" alt="down-arrow" class="arrow-configure">'
+    tempSortContainer.innerHTML = '<img src="Assets/HTML & CSS/General Images & Icons/arrowDown.svg" alt="down-arrow" class="arrow-configure">'
     sortByTemp('ascending')
   }
 }
@@ -339,7 +339,7 @@ function sortCardsByTemperature () {
  * @returns {object} - The data fetched from the josn file
  */
 async function fetchData () {
-  const resp = await fetch('../Assets/HTML & CSS/files/data.json')
+  const resp = await fetch('Assets/HTML & CSS/files/data.json')
   const data = resp.json()
   return data
 }
@@ -386,7 +386,7 @@ function getDateTime (dateAndTime) {
 function updateTimeLineDetails (cityData, currTime, period) {
   let weatherStatus = getWeatherIcon(cityData.temperature)
   document.getElementById('timeline-temp-1').textContent = cityData.temperature
-  document.getElementById('weather-status-icon-1').innerHTML = `<img src="../Assets/HTML & CSS/Weather Icons/${weatherStatus}Icon.svg" alt="${weatherStatus}" class="weather-icon-resize"></img>`
+  document.getElementById('weather-status-icon-1').innerHTML = `<img src="Assets/HTML & CSS/Weather Icons/${weatherStatus}Icon.svg" alt="${weatherStatus}" class="weather-icon-resize"></img>`
 
   let revisedTime = currTime // updating the time in the time line by increamenting the variable 'revisedTime'
   for (let i = 2; i <= 6; i++) {
@@ -404,7 +404,7 @@ function updateTimeLineDetails (cityData, currTime, period) {
     document.getElementById(`timing-${i}`).textContent = revisedTime + ' ' + period
     document.getElementById(`timeline-temp-${i}`).textContent = cityData.nextFiveHrs[i - 2]
     weatherStatus = getWeatherIcon(cityData.nextFiveHrs[i - 2])
-    document.getElementById(`weather-status-icon-${i}`).innerHTML = `<img src="../Assets/HTML & CSS/Weather Icons/${weatherStatus}Icon.svg" alt="${weatherStatus}" class="weather-icon-resize"></img>`
+    document.getElementById(`weather-status-icon-${i}`).innerHTML = `<img src="Assets/HTML & CSS/Weather Icons/${weatherStatus}Icon.svg" alt="${weatherStatus}" class="weather-icon-resize"></img>`
   }
 }
 
@@ -431,7 +431,7 @@ function getWeatherIcon (temp) {
  */
 function ariseNilValues () {
   clearInterval(setTimerId)
-  document.getElementById('city-icon').innerHTML = '<img src="../Assets/HTML & CSS/General Images & Icons/warningCityIcon.png" alt="alert" class="warning-icon-config" id="icon-resize">'
+  document.getElementById('city-icon').innerHTML = '<img src="Assets/HTML & CSS/General Images & Icons/warningCityIcon.png" alt="alert" class="warning-icon-config" id="icon-resize">'
   document.getElementById('temp-c-val').innerHTML = '<br>&nbsp;Nil'
   document.getElementById('humidity-val').innerHTML = '<br>Nil'
   document.getElementById('temp-f-val').innerHTML = '<br>&nbsp;Nil'
@@ -445,7 +445,7 @@ function ariseNilValues () {
   for (let i = 1; i <= 6; i++) {
     document.getElementById(`timing-${i}`).textContent = 'Nil'
     document.getElementById(`timeline-temp-${i}`).textContent = 'Nil'
-    document.getElementById(`weather-status-icon-${i}`).innerHTML = '<img src="../Assets/HTML & CSS/General Images & Icons/warningWeatherIcon.png" alt="alert" class="weather-icon-resize">'
+    document.getElementById(`weather-status-icon-${i}`).innerHTML = '<img src="Assets/HTML & CSS/General Images & Icons/warningWeatherIcon.png" alt="alert" class="weather-icon-resize">'
   }
 }
 
