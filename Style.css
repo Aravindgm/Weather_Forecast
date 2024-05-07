@@ -1,4 +1,4 @@
-@import url("../Assets/HTML & CSS/files/vars.css");
+@import url("Assets/HTML & CSS/files/vars.css");
 
 body {
   filter: brightness(100%);
@@ -12,7 +12,7 @@ body {
 
 .select-city {
   display: flex;
-  background-image: url("../Assets/HTML & CSS/General Images & Icons/background.svg");
+  background-image: url("Assets/HTML & CSS/General Images & Icons/background.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
